@@ -1,0 +1,18 @@
+/* Configuracion de la pagina */
+/*
+        COLORES
+
+    #181C14 - BEIGE
+    #697565 - VERDE BOSQUE
+    #3C3D37 - GRIS OSCURO
+    #181C14 - NEGRO
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
