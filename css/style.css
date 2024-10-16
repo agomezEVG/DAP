@@ -59,7 +59,7 @@
         margin: auto;
         padding: 1em auto;
         width: 80%;
-        height: 76vh;
+        height: 80vh;
         justify-content: space-between;
         align-items: center;
         justify-content: justify;
@@ -154,11 +154,17 @@
 /* Diseño de footer */
 
     .contenedor p {
-        padding: 2em 1em;
+        padding: 1em 1em;
         font-size: 1.5em;
     }
 
 /* LAYOUT PRINCIPAL DIARIOS */
+
+    div#tema{
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
 
     .diario header {
         width: 90%;
@@ -171,24 +177,17 @@
         margin-left: 5%;
         border-right: 1px solid;
         font-size: 1.2em;
-        border: 1px solid;
     }
 
     .diario main {
-        float: left;
-        width: 80%;
+        display: inline-block;
+        width: 75%;
         height: 80vh;
     }
 
     .diario footer {
-        position: relative;
-        bottom: 0;
-        border-top: 0.2vh solid;
-        background-color: #202739;
-        width: 80%;
-        height: 10vh;
-        margin: auto;
-        text-align: center;
+        width: 90%;
+
     }
 
 /* Diseño aside diarios */
@@ -196,22 +195,51 @@
     .diario > aside > ul{
         height: 100%;
         width: 100%;
-        border: 1px solid;
         padding: 2em 1em 2em 2em;
         list-style-type: none;
     }
 
     .diario > aside > ul > li{
-        padding-bottom: 2em;
+        padding-bottom: 1em;
+    }
+
+    .subMenu{
+        margin-left: 1em;
     }
     
     .diario > aside > ul a{
         text-decoration: none;
+        padding: 0.5em 2em 0.5em 0.5em;
+        border-radius: 0.4vw;
         width: 100%;
+    }
+    
+    .diario > aside a:hover{
+        background-color: #508C9B;
+        color: #202739;
+        transition: 1s;
     }
 
 /* Diseño main diarios */
 
     .diario > main > section {
+        min-height: 100%;
+        border: 1px solid;
+    }
 
+    section h2 {
+        margin: 1em 1.5em;
+    }
+
+    section h3 {
+        margin: 1em 3.5em;
+        border-bottom: 1px solid;
+        padding-bottom: 0.3em;
+        width: fit-content;
+    }
+
+    section p{
+        border: 1px solid;
+        width: 85%;
+        margin: 1em 3.5em;
     }
