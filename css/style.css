@@ -1,30 +1,4 @@
-/* Configuracion de la pagina */
-    
-    /* 
-            COLORES
-            
-            #202739 - AZUL MARINO
-            #3C3D37 - GRIS OSCURO
-
-
-
-        #ECDFCC - BEIGE
-        #697565 - VERDE BOSQUE
-        #181C14 - NEGRO VERDOSO
-    ----------------------------------
-        #EEEEEE - BLANCO
-        #508C9B - AZUL CIELO
-        #134B70 - AZUL OSCURO
-        #201E43 - AZUL/MORADO
-    ----------------------------------
-
-        #060606 - NEGRO
-        #4e5d86 - AZUL 
-        #8a9fd7 - AZUL PASTEL   
-        #bed4e8 - AZUL CIELO PASTEL 
-    */
-
-/* LAYOUT PRINCIPAL */
+/* ----------------------------- LAYOUT PRINCIPAL ----------------------------- */
 
     *{
         margin: 0;
@@ -45,7 +19,6 @@
 
     header{
         display: flex;
-        grid-column: 1/3;
         margin: 0 auto;
         width: 80%;
         height: 10vh;
@@ -59,26 +32,25 @@
         margin: auto;
         padding: 1em auto;
         width: 80%;
-        height: 80vh;
-        justify-content: space-between;
+        min-height: 80vh;
+        justify-content: space-evenly;
         align-items: center;
         justify-content: justify;
     }
 
     footer {
-        position: relative;
-        bottom: 0;
+        display: flex;
         border-top: 0.2vh solid;
         background-color: #202739;
         width: 80%;
         min-height: 10vh;
-        margin: auto;
-        text-align: center;
+        margin: 0 auto;
+        justify-content: center;
     }
 
-/* Estilo cabecera de la pagina */
+/* ----------------------------- CONTENIDO HEADER ----------------------------- */
 
-    header>a{
+    header > a{
         display: flex;
         margin: 0 auto;
     }
@@ -87,13 +59,13 @@
         width: 40%;
     }
 
-    header>nav{
+    header > nav{
         margin-right: 25%;
         line-height: 10vh;
         font-size: 1.2em;
     }
 
-    header>nav>a{
+    header > nav > a{
         margin: 0 1vw;
         text-decoration: none;
     }
@@ -102,8 +74,9 @@
         color: #3C3D37;
     }
 
-/* Diseño main (index.html) */
+/* ----------------------------- CONTENIDO MAIN (INDEX.HTML) ----------------------------- */
 
+/* ----------------------------- CLASES TARJETAS ----------------------------- */
     .tarjeta {
         border: 0.2vw solid #4e5d86;
         border-radius: 0.5em;
@@ -114,13 +87,13 @@
         transition: transform 0.3s ease-in-out;
     }
 
-    .tarjeta h2 {
+    .tarjeta > h2 {
         color: #bed4e8;
         font-size: 1.5em;
         margin-bottom: 0.5em;
     }
 
-    .tarjeta p {
+    .tarjeta > p {
         color: #eeeeee;
         font-size: 1em;
         margin-bottom: 1em;
@@ -151,95 +124,129 @@
         pointer-events: none;
     }
 
-/* Diseño de footer */
+/* ----------------------------- CONTENIDO FOOTER ----------------------------- */
 
     .contenedor p {
         padding: 1em 1em;
         font-size: 1.5em;
     }
 
-/* LAYOUT PRINCIPAL DIARIOS */
+/* ----------------------------- LAYOUT HTMLs DIARIOS ----------------------------- */
 
-    div#tema{
-        width: 100%;
-        height: 100%;
-        background-color: black;
-    }
-
-    .diario header {
+    .contenido > header {
         width: 90%;
     }
 
-    .diario aside {
+    .contenido > aside {
+        position: sticky;
+        display: flex;
         float: left;
         width: 15%;
-        height: 80vh;
+        height: 100vh;
         margin-left: 5%;
-        border-right: 1px solid;
         font-size: 1.2em;
     }
 
-    .diario main {
+    .contenido > main {
+        /* position: sticky; */
         display: inline-block;
         width: 75%;
-        height: 80vh;
+        height: fit-content;
+        border-left: 1px solid;
     }
 
-    .diario footer {
+    .contenido > footer {
         width: 90%;
-
     }
 
-/* Diseño aside diarios */
+/* ----------------------------- ASIDE DIARIOS ----------------------------- */
 
-    .diario > aside > ul{
+    .contenido > aside > ul{
+        position: fixed;
         height: 100%;
-        width: 100%;
-        padding: 2em 1em 2em 2em;
+        width: 15%;
+        padding: 2em 0em 2em 1em;
         list-style-type: none;
     }
-
-    .diario > aside > ul > li{
-        padding-bottom: 1em;
+    
+    .contenido > aside > ul > li{
+        width: fit-content;
+        padding: 0.5em 0em;
+        
     }
 
     .subMenu{
         margin-left: 1em;
+        color: #134B70;
     }
     
-    .diario > aside > ul a{
+    .contenido > aside a{
         text-decoration: none;
-        padding: 0.5em 2em 0.5em 0.5em;
+        padding: 0.5em;
         border-radius: 0.4vw;
-        width: 100%;
     }
     
-    .diario > aside a:hover{
+    .contenido > aside a:hover{
         background-color: #508C9B;
         color: #202739;
         transition: 1s;
     }
 
-/* Diseño main diarios */
+/* ----------------------------- CONTENIDO MAIN DIARIOS ----------------------------- */
 
-    .diario > main > section {
-        min-height: 100%;
-        border: 1px solid;
-    }
-
-    section h2 {
+    .encabezados {
         margin: 1em 1.5em;
+        font-style: italic;
     }
 
-    section h3 {
+    .contenido h3 {
         margin: 1em 3.5em;
-        border-bottom: 1px solid;
+        border-bottom: 1px solid orange;
         padding-bottom: 0.3em;
         width: fit-content;
     }
 
-    section p{
-        border: 1px solid;
-        width: 85%;
-        margin: 1em 3.5em;
+    .contenido h4{
+        margin: 1em 0em;
     }
+
+    .contenido p{
+        width: 80%;
+        margin: 0em 4em;
+        padding: 1em;
+    }
+
+    /* ---------------------------- CLASES TARJETAS ---------------------------- */
+
+
+
+.areas {
+    grid-template-columns: 50% 50%;
+    border: 0.2em solid #134B70;
+    border-radius: 0.4vw;
+    width: 50%;
+    margin: auto;
+    background-color: #ffffff35;
+}
+
+.cuatroCols {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.cincoCols {
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.tarjetas > div > * {
+    text-align: center;
+}
+
+.tarjetas > div {
+    border-radius: 10px;
+    padding: 1vh 1vw;
+}
+
+.tarjetas > div:hover {
+    background-color: #272a35;
+    transition: .3s;
+} 
