@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning Diary - APACHE2</title>
+        <link rel="shortcut icon" href="../img/logoEVG.png" type="image/x-icon">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="diarios">
+        <!------------------------------- HEADER ------------------------------->
+        <header>
+            <a href="../index.html"><img src="../img/home.svg" alt="Boton Home"></a>
+            <nav>
+                <a href="diario01.html" >D1 - GIT</a>
+                <a href="#">D2 - APACHE</a>
+                <a href="#"><span class="textoDisable">D3 - DISABLE</span></a>
+                <a href="#"><span class="textoDisable">D4 - DISABLE</span></a>
+                <a href="#"><span class="textoDisable">D5 - DISABLE</span></a>
+            </nav>
+        </header>
+        <!------------------------------- ASIDE ------------------------------->
+        <aside>
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li class="subMenu"><a href="#queEsGit">¿Qué es GIT?</a></li>
+                <li class="subMenu"><a href="#areas">Áreas de trabajo</a></li>
+                <li class="subMenu"><a href="#estadoArchivos">Estados de los archivos</a></li>
+                <li><a href="#comandosBasicos">Comandos básicos</a></li>
+                <li class="subMenu"><a href="#gitInit">Init</a></li>
+                <li class="subMenu"><a href="#gitBranch">Branch</a></li>
+                <li class="subMenu"><a href="#gitCommit">Commit</a></li>
+                <li class="subMenu"><a href="#gitRemote">Remote</a></li>
+                <li class="subMenu"><a href="#gitPush">Push</a></li>
+                <li><a href="#otrosComandos">Otros comandos</a></li>
+            </ul>
+        </aside>
+        <!------------------------------- MAIN ------------------------------->
+        <main>
+            <section id="introduccion">
+                <h2 class="encabezados">Introducción</h2>
+                <article >
+                    <h3 id="queEsGit">¿Qué es GIT?</h3>
+                    <p>
+                        Servicio estandarizado de comunicación y gestión de versiones entre local y remoto, 
+                        que permite llevar un registro de los cambios en proyectos y archivos,
+                        definiendo diferentes versiones, recuperando versiones anteriores cuando sea necesario.
+                    </p>
+                </article>
+
+                <article>
+                    <h3 id="areas">Áreas de trabajo</h2>
+                    <div id="areasTrabajo" class="tarjetasD">
+                        <div>
+                            <h4>Directorio de trabajo</h4>
+                            <p>Es el directorio donde se encuentran los archivos de nuestro proyecto.</p>
+                        </div>
+                        <div>
+                            <h4>Staging</h4>
+                            <p>Área de preparación, el archivo aún no esta guardado definitivamente.</p>
+                        </div>
+                        <div>
+                            <h4>Repositorio Local</h4>
+                            <p>Repositorio ubicado en nuestra ordenador.</p>
+                        </div>
+                        <div>
+                            <h4>Repositorio Remoto</h4>
+                            <p>Repositorio centralizado en un servidor, varios desarrolladores puedes trabajar sobre él.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article>
+                    <h3 id="estadoArchivos">Estados de los archivos</h3>
+                    <div id="estados" class="tarjetasD cincoCols">
+                        <div>
+                            <h4>Untracked</h4>
+                            <p>Archivo no marcado por GIT, no se le hace seguimiento.</p>
+                        </div>
+                        <div>
+                            <h4>Unmodified</h4>
+                            <p>Archivo marcado por GIT, sin ninguna modificacion.</p>
+                        </div>
+                        <div>
+                            <h4>Modified</h4>
+                            <p>Archivo marcado por GIT y con modificaciones.</p>
+                        </div>
+                        <div>
+                            <h4>Staged</h4>
+                            <p>Archivo preparado para ser guardado en el repositorio.</p>
+                        </div>
+                        <div>
+                            <h4>Commited</h4>
+                            <p>Archivo guardado en el repositorio local.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <!------------------------------- FOOTER ------------------------------->
+        <footer>
+            <div class="contenedor">
+                <p>Álvaro Gómez Delgado - Despliegue de Aplicaciones Web (DEAP)</p>
+            </div>
+        </footer>
+    </body>
+</html>
