@@ -7,6 +7,7 @@
 
         <!-- ESTILOS E ICIONOS-->
         <link rel="shortcut icon" href="img/logoEVG.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -21,34 +22,36 @@
             </nav>
         </header>
         <main>
-            <section class="tarjetas">
-                <h2>GIT</h2>
-                <p>Contenido y comandos de GIT.</p>
-                <a href="html/diario01.html" target="_blank" class="btn">Entrar</a>
-            </section>
-        
-            <section class="tarjetas ">
-                <h2>Bloque 2 - Apache</h2>
-                <p>Contenido sobre el servicio Apache2.</p>
-                <a href="html/diario02.html" target="_blank" class="btn">Entrar</a>
-            </section>
-        
-            <section class="tarjetas disabled">
-                <h2>Bloque 3 - Desabilitado</h2>
-                <p>Este contenido no está disponible aún.</p>
-                <a href="html/diario03.html" target="_blank" class="btn">Próximamente</a>
-            </section>
+            <section id="contTarjetas">
+                <article class="tarjetas">
+                    <a href="html/diario01.html" class="btn"><button><img src="img/flechaTarjetas.png" alt="Flecha"></button></a>
+                    <h2>GIT</h2>
+                    <p>Contenido y comandos de GIT.</p>
+                </article>
 
-            <section class="tarjetas disabled">
-                <h2>Bloque 4 - Desabilitado</h2>
-                <p>Este contenido no está disponible aún.</p>
-                <a href="html/diario04.html" target="_blank" class="btn">Próximamente</a>
-            </section>
-        
-            <section class="tarjetas disabled">
-                <h2>Bloque 5 - Desabilitado</h2>
-                <p>Este contenido no está disponible aún.</p>
-                <a href="html/diario05.html" target="_blank" class="btn">Próximamente</a>
+                <article class="tarjetas ">
+                    <a href="html/diario02.html" class="btn">Entrar</a>
+                    <h2>Apache</h2>
+                    <p>Contenido sobre el servicio Apache2.</p>
+                </article>
+
+                <article class="tarjetas disabled">
+                    <a href="html/diario03.html" class="btn">Próximamente</a>
+                    <h2>Desabilitado</h2>
+                    <p>Este contenido no está disponible aún.</p>
+                </article>
+
+                <article class="tarjetas disabled">
+                    <a href="html/diario04.html" class="btn">Próximamente</a>
+                    <h2>Desabilitado</h2>
+                    <p>Este contenido no está disponible aún.</p>
+                </article>
+            
+                <article class="tarjetas disabled">
+                    <a href="html/diario05.html" class="btn">Próximamente</a>
+                    <h2>Desabilitado</h2>
+                    <p>Este contenido no está disponible aún.</p>
+                </article>
             </section>
         </main>
         <footer>
