@@ -10,10 +10,10 @@
     <body class="diarios">
         <!------------------------------- HEADER ------------------------------->
         <header>
-            <a href="../index.html"><img src="../img/home.svg" alt="Boton Home"></a>
+            <div id="btnHome"><a href="../index.html"><img src="../img/home.svg" alt="Boton Home"></a></div>
             <nav>
-                <a href="diario01.html" >D1 - GIT</a>
-                <a href="#">D2 - APACHE</a>
+                <a href="diario01.html">D1 - GIT</a>
+                <a href="diario02.html">D2 - SERVICIOS WEB</span></a>
                 <a href="#"><span class="textoDisable">D3 - DISABLE</span></a>
                 <a href="#"><span class="textoDisable">D4 - DISABLE</span></a>
                 <a href="#"><span class="textoDisable">D5 - DISABLE</span></a>
@@ -23,9 +23,11 @@
         <aside>
             <ul>
                 <li><a href="#introduccion">Introducción</a></li>
-                <li class="subMenu"><a href="#queEsGit">¿Qué es GIT?</a></li>
-                <li class="subMenu"><a href="#areas">Áreas de trabajo</a></li>
-                <li class="subMenu"><a href="#estadoArchivos">Estados de los archivos</a></li>
+                <li class="subMenu"><a href="#queEsDNS">¿Qué es DNS?</a></li>
+                <li class="subMenu"><a href="#queEsHTTP">¿Qué es HTTP/S?</a></li>
+                <li><a href="#servicioDNS">Servicio DNS</a></li>
+                <li><a href="#protocoloHTTP">Protocolo HTTP/S</a></li>
+                <li class="subMenu"><a href="#estadoArchivos">Estados archivos</a></li>
                 <li><a href="#comandosBasicos">Comandos básicos</a></li>
                 <li class="subMenu"><a href="#gitInit">Init</a></li>
                 <li class="subMenu"><a href="#gitBranch">Branch</a></li>
@@ -37,19 +39,26 @@
         </aside>
         <!------------------------------- MAIN ------------------------------->
         <main>
+            <h1>UNIDAD 2 - SERVICIOS WEB</h1>
             <section id="introduccion">
-                <h2 class="encabezados">Introducción</h2>
-                <article >
-                    <h3 id="queEsGit">¿Qué es GIT?</h3>
+                <!------------------------------- INTRODUCCIÓN A SERVICIOS WEB ------------------------------->
+                <h2>Introducción a los servicios web</h2>
+                <h2 class="desplazamiento">PROTOCOLO HTTP/S</h2>
+                <article>
+                    <h3 id="queEsDNS">¿Qué es el servicio DNS?</h3>
                     <p>
-                        Servicio estandarizado de comunicación y gestión de versiones entre local y remoto, 
-                        que permite llevar un registro de los cambios en proyectos y archivos,
-                        definiendo diferentes versiones, recuperando versiones anteriores cuando sea necesario.
+                        DNS (Domain Name Server) es un sistema que permite traducir nombres de dominio a direcciones IP, de forma que los usuarios pueden acceder a los servicios de red mediante nombres haciendolos más fáciles de recordar.
+                    </p>
+                    <h3 id="queEsHTTP">¿Qué es el protocolo HTTP y HTTP/S?</h3>
+                    <p>
+                        HTTP (Hypertext Transfer Protocol) es un protocolo de comunicación entre un cliente y un servidor. Su principal propósito es la transferencia de información.
                     </p>
                 </article>
-
+            </section>
+            <section>
+                <!------------------------------- PROTOCOLO HTTP ------------------------------->
                 <article>
-                    <h3 id="areas">Áreas de trabajo</h2>
+                    <h3 id="areas">Áreas de trabajo</h3>
                     <div id="areasTrabajo" class="tarjetasD">
                         <div>
                             <h4>Directorio de trabajo</h4>
@@ -96,12 +105,71 @@
                     </div>
                 </article>
             </section>
+            <!------------------------------- COMANDOS BASICOS ------------------------------->           
+            <section >
+                <h2 id="comandosBasicos" class="encabezados">Comandos Básicos</h2>
+                <article>
+                    <h3 id="gitInit">Inicio de repositorio</h3>
+                    <div class="codigo"><p>git init</p></div>
+                </article>
+
+                <article>
+                    <h3 id="gitBranch">Renombrar una rama</h3>
+                    <div class="codigo">
+                        <p>git branch -M < rama > <span class="comentario">// Renombrar rama a main como GITHUB</span></p></div>
+                </article>
+
+                <article>
+                    <h3 id="gitAdd">Marcar archivos</h3>
+                    <div class="codigo">
+                        <p>git add < fichero ></p>
+                        <p>git add . <span class="comentario">// Añade todos los archivos</span></p>
+                        <p>git add *.html <span class="comentario">// Añade los archivos con extensión .html</span></p>
+                    </div>
+                </article>
+
+                <article>
+                    <h3 id="gitCommit">Subir archivo a local</h3>
+                    <div class="codigo">
+                        <p>git commit -m "Commit DEAP - GIT"</p>
+                    </div>
+                </article>
+
+                <article>
+                    <h3 id="gitRemote">Puntero de un repositorio remoto</h3>
+                    <div class="codigo">
+                        <p>git remote add < aliasRepositorio > < URL ></p>
+                        <p>git remote add origin https://github.com/agomezEVG/DAP.git</p>
+                    </div>
+                </article>
+
+                <article>
+                    <h3 id="gitPush">Subir repositorio local a remoto</h3>
+                    <div class="codigo">
+                        <p>git push < repositorio-remoto > < rama > </p>
+                        <p>git push origin main</p>
+                    </div>
+                </article>
+            </section>
+            <!------------------------------- OTROS COMANDOS ------------------------------->
+            <section>
+                <h2 id="otrosComandos" class="encabezados">Otros Comandos</h2>
+                <article>
+                    <h3>Comandos de estado</h3>
+                    <div class="codigo">
+                        <p>git status</p>
+                    </div>
+                    <div class="codigo">
+                        <p>git log --oneline <span class="comentario">// Muestra el historial de cambios</span></p>
+                        <p>git log --oneline --all <span class="comentario">// Muestra el historial de cambios de todas las ramas</span></p>
+                    </div>
+                </article>
+            </section>
         </main>
         <!------------------------------- FOOTER ------------------------------->
         <footer>
-            <div class="contenedor">
-                <p>Álvaro Gómez Delgado - Despliegue de Aplicaciones Web (DEAP)</p>
-            </div>
+            <div><img src="../img/logoEVG.png" alt="Logo Escuela Virgen de Guadalupe"></div>
+            <p>Álvaro Gómez Delgado - Despliegue de Aplicaciones Web (DEAP)</p>
         </footer>
     </body>
 </html>
