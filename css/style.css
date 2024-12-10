@@ -116,14 +116,6 @@
         }
 
         /* ------------- CONTENIDO TARJETA ------------- */
-            #git {
-                background-image: url('/img/gitlogo.png');
-                background-repeat: no-repeat;
-                background-size: 100%;
-            }
-            #servicioWeb {
-                background-image: url();
-            }
 
             .tarjetas h2 {
                 display: none;
@@ -328,11 +320,13 @@
         font-style: italic;
     }
 
-    /* ---------------------------- CLASES TARJETAS DIARIOS ---------------------------- */
+    /* ---------------------------- CLASES TARJETAS ---------------------------- */
 
         .tarjetasD{
             display: grid;
             border-radius: 0.4vw;
+            width: fit-content;
+            margin: auto;
         }
 
         .tarjetasD > div {
@@ -350,7 +344,17 @@
             transition: .3s;
         }
 
-        .cincoCols{
+        .dosCols {
+            grid-template-columns: 50% 50%;
+            padding: 1vh 1vw;
+        }
+
+        .tresCols {
+            grid-template-columns: 50% 50% 50%;
+            padding: 1vh 1vw;
+        }
+
+        .cincoCols {
             grid-template-columns: 20% 20% 20% 20% 20%;
             padding: 1vh 1vw;
         }
@@ -375,4 +379,29 @@
 
     #estados > div:nth-child(5):hover{
         background-color: #219419;
+    }
+
+/* ---------------------------- CONTENIDO SERVICIO WEB ---------------------------- */
+
+    div.backgroundImagen {
+        width: 50%;
+        margin: auto;
+    }
+
+    .backgroundImagen > img{
+        background-color: #D9D9D9;
+        border-radius: 0.5vw;
+        width: 100%;
+    }  
+
+    .desplazamiento {
+        margin-left: 10%;
+    }
+
+    .desplazamiento2 {
+        margin-left: 2.5%;
+    }
+
+    .resaltar {
+        color: #FC8D33;
     }

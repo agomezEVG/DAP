@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Learning Diary - APACHE2</title>
+        <title>Learning Diary - SERVICIOS WEB</title>
         <link rel="shortcut icon" href="../img/logoEVG.png" type="image/x-icon">
         <link rel="stylesheet" href="../css/style.css">
     </head>
@@ -22,146 +22,289 @@
         <!------------------------------- ASIDE ------------------------------->
         <aside>
             <ul>
-                <li><a href="#introduccion">Introducción</a></li>
-                <li class="subMenu"><a href="#queEsDNS">¿Qué es DNS?</a></li>
-                <li class="subMenu"><a href="#queEsHTTP">¿Qué es HTTP/S?</a></li>
-                <li><a href="#servicioDNS">Servicio DNS</a></li>
                 <li><a href="#protocoloHTTP">Protocolo HTTP/S</a></li>
-                <li class="subMenu"><a href="#estadoArchivos">Estados archivos</a></li>
-                <li><a href="#comandosBasicos">Comandos básicos</a></li>
-                <li class="subMenu"><a href="#gitInit">Init</a></li>
-                <li class="subMenu"><a href="#gitBranch">Branch</a></li>
-                <li class="subMenu"><a href="#gitCommit">Commit</a></li>
-                <li class="subMenu"><a href="#gitRemote">Remote</a></li>
-                <li class="subMenu"><a href="#gitPush">Push</a></li>
-                <li><a href="#otrosComandos">Otros comandos</a></li>
+                <li class="subMenu"><a href="#queEsHTTP">¿Qué es HTTP/S?</a></li>
+                <li class="subMenu"><a href="#funcionamientoHTTP">Funcionamiento HTTP</a></li>
+                <li class="subMenu"><a href="#solicitudes">Solicitudes</a></li>
+                <li class="subMenu"><a href="#httpyhttps">HTTP/HTTPS</a></li>
+                <li class="subMenu"><a href="#codigos">Códigos</a></li>
+                <li><a href="#servicioDNS">Servicio DNS</a></li>
+                <li class="subMenu"><a href="#queEsDNS">¿Qué es DNS?</a></li>
+                <li class="subMenu"><a href="#funcionamientoDNS">Funcionamiento DNS</a></li>
+                <li class="subMenu"><a href="#tiposRegistros">Tipos Registros</a></li>
+                <li class="subMenu"><a href="#resoluciones">Resoluciones</a></li>
+                <li><a href="#servicioApache">Servicio Apache</a></li>
+                <li class="subMenu"><a href="#caracteristicas">Características</a></li>
+                <li class="subMenu"><a href="#contextoServidor">Contexto Servidor</a></li>
+                <li class="subMenu"><a href="#directivas">Directivas</a></li>
+                <li class="subMenu"><a href="#estructura">Estructura</a></li>
             </ul>
         </aside>
         <!------------------------------- MAIN ------------------------------->
         <main>
             <h1>UNIDAD 2 - SERVICIOS WEB</h1>
-            <section id="introduccion">
-                <!------------------------------- INTRODUCCIÓN A SERVICIOS WEB ------------------------------->
-                <h2>Introducción a los servicios web</h2>
-                <h2 class="desplazamiento">PROTOCOLO HTTP/S</h2>
+            <!------------------------------- INTRODUCCIÓN A SERVICIOS WEB ------------------------------->
+            <section id="protocoloHTTP">
+                <!------------------------------- PROTOCOLO HTTP ------------------------------->
+                <h2>PROTOCOLO HTTP/S</h2>
                 <article>
-                    <h3 id="queEsDNS">¿Qué es el servicio DNS?</h3>
-                    <p>
-                        DNS (Domain Name Server) es un sistema que permite traducir nombres de dominio a direcciones IP, de forma que los usuarios pueden acceder a los servicios de red mediante nombres haciendolos más fáciles de recordar.
-                    </p>
                     <h3 id="queEsHTTP">¿Qué es el protocolo HTTP y HTTP/S?</h3>
                     <p>
-                        HTTP (Hypertext Transfer Protocol) es un protocolo de comunicación entre un cliente y un servidor. Su principal propósito es la transferencia de información.
+                        HTTP (Protocolo de Transferencia de Hipertexto) es un protocolo utilizado para la comunicación entre un cliente y un servidor, cuyo objetivo principal es facilitar la transferencia de información.
+                    </p>
+                </article>
+
+                <article>
+                    <h3 id="funcionamientoHTTP">Funcionamiento del protocolo</h3>
+                    <div class="backgroundImagen"><img src="../img/protocoloHTTP.gif" alt="Funcionamiento protocolo HTTP"></div>
+                    <div class="tarjetasD dosCols">
+                        <div>
+                            <h4>Cliente Web</h4>
+                            <div>
+                                <p>Solicita e interpreta información</p>
+                                <p>Muestra los resultados en pantalla</p>
+                                <p>Permite la interacción del usuario</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Servidor Web</h4>
+                            <div>
+                                <p>Proporciona contenido estático</p>
+                                <p>Genera contenido dinámico ejecutando programas (por ejemplo, PHP)</p>
+                                <p>Gestiona certificados SSL/TLS</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="solicitudes">
+                    <h3 >Tipo de solicitudes</h3>
+                    <div class="tarjetasD dosCols">
+                        <div>
+                            <h4>GET</h4>
+                            <p>
+                                Utilizado para solicitar información al servidor sin alterar sus datos.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>POST</h4>
+                            <p>
+                                Empleado para enviar datos al servidor y realizar modificaciones en su contenido.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="httpyhttps">
+                    <h3>HTTP / HTTPS</h3>
+                    <div class="tarjetasD dosCols">
+                        <div>
+                            <h4>HTTP</h4>
+                            <p>
+                                Es un protocolo de transferencia sin cifrado, lo que representa un problema de seguridad, 
+                                ya que los datos transmitidos están expuestos.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>HTTPS</h4>
+                            <p>
+                                Es un protocolo de transferencia con cifrado que soluciona las vulnerabilidades de seguridad de HTTP. 
+                                Para utilizar HTTPS, se requiere un certificado SSL/TLS.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="codigos">
+                    <h3>Códigos de estado</h3>
+                    <ul class="desplazamiento">
+                        <li>1xx - Mensaje informativo</li>
+                        <li>
+                            2xx - Exito
+                            <ul class="desplazamiento2">
+                                <li>200 - OK</li>
+                                <li>201 - Created</li>
+                                <li>202 - Accepted</li>
+                            </ul>
+                        </li>
+                        <li>
+                            3xx - Redirecciones
+                            <ul class="desplazamiento2">
+                                <li>300 - Multiple Choice</li>
+                                <li>301 - Moved Permanently</li>
+                                <li>302 - Found</li>
+                            </ul>
+                        </li>
+                        <li>
+                            4xx - Errores del cliente
+                            <ul class="desplazamiento2">
+                                <li>400 - Bad Request</li>
+                                <li>401 - Unauthorized</li>
+                                <li>403 - Forbidden</li>
+                                <li>404 - Not Found</li>
+                            </ul>
+                        </li>
+                        <li>
+                            5xx - Errores del servidor
+                            <ul class="desplazamiento2">
+                                <li>500 - Internal Server Error</li>
+                                <li>501 - Not Implemented</li>
+                                <li>502 - Bad Gateway</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section>
+                <!------------------------------- SERVICIO DNS ------------------------------->
+                <h2>SERVICIO DNS</h2>
+                <article id="queEsDNS">
+                    <h3>¿Qué es el servicio DNS?</h3>
+                    <p>
+                        El DNS (Domain Name System) es un sistema que traduce nombres de dominio en direcciones IP, 
+                        permitiendo que los usuarios accedan a servicios de red mediante nombres más fáciles de recordar.
+                    </p>                    
+                </article>
+
+                <article id="funcionamientoDNS">
+                    <h3>Funcionamiento DNS</h3>
+                    <p>
+                        Generalmente, en nuestros clientes contamos con una dirección IP que corresponde al servidor DNS, 
+                        la cual suele ser proporcionada por nuestro proveedor de servicios de Internet (ISP), 
+                        aunque también es posible configurarla manualmente.
+                    </p>
+                    <p>
+                        Cuando un cliente desea acceder a un recurso web, como por ejemplo www.google.com, 
+                        se llevan a cabo los siguientes pasos en los servidores DNS:
+                    </p>
+                    
+                    <ol class="desplazamiento">
+                        <li>
+                            Los servidores DNS que reciben la solicitud primero revisan su memoria caché para verificar si ya disponen de la respuesta.
+                        </li>
+                        <li>
+                            Si la respuesta está almacenada en la caché, la envían de inmediato.
+                        </li>
+                        <li>
+                            Si no está en la caché, comienzan una búsqueda en otros servidores DNS.
+                        </li>
+                        <li>
+                            Una vez que encuentran la respuesta, el servidor DNS la almacena en su memoria caché para futuras consultas y la entrega al solicitante.
+                        </li>
+                    </ol>
+                </article>
+                <article id="tiposRegistros">
+                    <h3>Tipos de registros</h3>
+                    <p>
+                        Los registros DNS son responsables de traducir nombres de dominio a direcciones IP. 
+                        Existen varios tipos de registros, cada uno con funciones específicas:
+                    </p>
+                    <ul class="desplazamiento">
+                        <li><span class="negrita">A</span> - Permite traducir nombres a direcciones IPv4</li>
+                        <li><span class="negrita">AAAA</span> - Permite traducir nombres a direcciones IPv6</li>
+                        <li><span class="negrita">CNAME</span> - Permite traducir nombres a otros nombres de dominio</li>
+                        <li><span class="negrita">MX</span> - Permite traducir nombres a servidores de correo</li>
+                        <li><span class="negrita">NS</span> - Permite traducir nombres a servidores de nombres</li>
+                        <li><span class="negrita">PTR</span> - Permite traducir direcciones a nombres de dominio</li>
+                        <li><span class="negrita">SOA</span> - Permite traducir nombres a servidores de autoridad</li>
+                    </ul>
+                </article>
+                <article id="resoluciones">
+                    <h3>Resolucion directa e inversa</h3>
+                    <p>
+                        <span class="negrita">Resolución directa:</span> Traduce nombres de dominio a direcciones IP.
+                    </p>
+                    <p>
+                        <span class="negrita">Resolución inversa:</span> Traduce direcciones IP a nombres de dominio.
                     </p>
                 </article>
             </section>
-            <section>
-                <!------------------------------- PROTOCOLO HTTP ------------------------------->
-                <article>
-                    <h3 id="areas">Áreas de trabajo</h3>
-                    <div id="areasTrabajo" class="tarjetasD">
+            <section id="servicioApache">
+                <!------------------------------- SERVICIO WEB APACHE ------------------------------->
+                <h2>Servidor WEB Apache</h2>
+                <article id="caracteristicas">
+                    <h3>Características de Apache</h3>
+                    <ul class="desplazamiento">
+                        <li>Servidor web HTTP de código abierto</li>
+                        <li>Implementa el protocolo HTTP/1.1</li>
+                        <li>Modular</li>
+                        <li>Multi-plataforma (Windows, Linux, MacOS)</li>
+                        <li>Muy estable</li>
+                    </ul>
+                </article>
+                
+                <article id="contextoServidor">
+                    <h3>Contextos del Servidor</h3>
+                    <p>
+                        Apache dispone de contextos de configuración que se <span class="negrita">heredan</span> y se aplican en diferentes niveles:
+                    </p>
+                    <div class="tarjetasD">
                         <div>
-                            <h4>Directorio de trabajo</h4>
-                            <p>Es el directorio donde se encuentran los archivos de nuestro proyecto.</p>
+                            <h4>Contexto de Servidor</h4>
+                            <p>
+                                En este contexto se definen las directivas que afectan a todo el servidor.
+                            </p>
                         </div>
                         <div>
-                            <h4>Staging</h4>
-                            <p>Área de preparación, el archivo aún no esta guardado definitivamente.</p>
+                            <h4>Contexto de Virtual Host</h4>
+                            <p>
+                                En este contexto se definen las directivas que afectan a un host virtual (aplicación web).
+                            </p>
                         </div>
                         <div>
-                            <h4>Repositorio Local</h4>
-                            <p>Repositorio ubicado en nuestra ordenador.</p>
+                            <h4>Contexto de Directorio</h4>
+                            <p>
+                                En este contexto se definen las directivas que afectan a un directorio específico.
+                            </p>
                         </div>
-                        <div>
-                            <h4>Repositorio Remoto</h4>
-                            <p>Repositorio centralizado en un servidor, varios desarrolladores puedes trabajar sobre él.</p>
-                        </div>
+                    </div>                    
+                    <div class="backgroundImagen">
+                        <img src="../img/contextosApache.gif" alt="Contextos servidor Apache">
                     </div>
                 </article>
 
-                <article>
-                    <h3 id="estadoArchivos">Estados de los archivos</h3>
-                    <div id="estados" class="tarjetasD cincoCols">
-                        <div>
-                            <h4>Untracked</h4>
-                            <p>Archivo no marcado por GIT, no se le hace seguimiento.</p>
-                        </div>
-                        <div>
-                            <h4>Unmodified</h4>
-                            <p>Archivo marcado por GIT, sin ninguna modificacion.</p>
-                        </div>
-                        <div>
-                            <h4>Modified</h4>
-                            <p>Archivo marcado por GIT y con modificaciones.</p>
-                        </div>
-                        <div>
-                            <h4>Staged</h4>
-                            <p>Archivo preparado para ser guardado en el repositorio.</p>
-                        </div>
-                        <div>
-                            <h4>Commited</h4>
-                            <p>Archivo guardado en el repositorio local.</p>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!------------------------------- COMANDOS BASICOS ------------------------------->           
-            <section >
-                <h2 id="comandosBasicos" class="encabezados">Comandos Básicos</h2>
-                <article>
-                    <h3 id="gitInit">Inicio de repositorio</h3>
-                    <div class="codigo"><p>git init</p></div>
+                <article id="directivas">
+                    <h3>Buenas prácticas en las directivas</h3>
+                    <p>
+                        Para mantener una buena organización en la configuración de Apache, es recomendable seguir las siguientes buenas prácticas:
+                    </p>
+                    <ol class="desplazamiento">
+                        <li><span class="resaltar">DirectoryIndex:</span> Define el archivo que se debe servir cuando se solicita un directorio.</li>
+                        <li><span class="resaltar">Options:</span> Gestiona las características disponibles en un directorio.</li>
+                        <li><span class="resaltar">AllowOverride:</span> Permite la configuración de directivas a través de archivos .htaccess.</li>
+                        <li><span class="resaltar">Order / Require:</span> Regula el acceso a los recursos del servidor.</li>
+                    </ol>
+                    
                 </article>
 
                 <article>
-                    <h3 id="gitBranch">Renombrar una rama</h3>
-                    <div class="codigo">
-                        <p>git branch -M < rama > <span class="comentario">// Renombrar rama a main como GITHUB</span></p></div>
+                    <h3>Directivas de contextos</h3>
+                    <p>
+                        Consulta las directivas disponibles y sus valores:
+                        <a target="_blank" href="https://httpd.apache.org/docs/2.4/mod/directives.html"><span class="resaltar">Directivas oficiales de httpd Apache</span></a>
+                    </p>
                 </article>
-
-                <article>
-                    <h3 id="gitAdd">Marcar archivos</h3>
-                    <div class="codigo">
-                        <p>git add < fichero ></p>
-                        <p>git add . <span class="comentario">// Añade todos los archivos</span></p>
-                        <p>git add *.html <span class="comentario">// Añade los archivos con extensión .html</span></p>
-                    </div>
-                </article>
-
-                <article>
-                    <h3 id="gitCommit">Subir archivo a local</h3>
-                    <div class="codigo">
-                        <p>git commit -m "Commit DEAP - GIT"</p>
-                    </div>
-                </article>
-
-                <article>
-                    <h3 id="gitRemote">Puntero de un repositorio remoto</h3>
-                    <div class="codigo">
-                        <p>git remote add < aliasRepositorio > < URL ></p>
-                        <p>git remote add origin https://github.com/agomezEVG/DAP.git</p>
-                    </div>
-                </article>
-
-                <article>
-                    <h3 id="gitPush">Subir repositorio local a remoto</h3>
-                    <div class="codigo">
-                        <p>git push < repositorio-remoto > < rama > </p>
-                        <p>git push origin main</p>
-                    </div>
-                </article>
-            </section>
-            <!------------------------------- OTROS COMANDOS ------------------------------->
-            <section>
-                <h2 id="otrosComandos" class="encabezados">Otros Comandos</h2>
-                <article>
-                    <h3>Comandos de estado</h3>
-                    <div class="codigo">
-                        <p>git status</p>
-                    </div>
-                    <div class="codigo">
-                        <p>git log --oneline <span class="comentario">// Muestra el historial de cambios</span></p>
-                        <p>git log --oneline --all <span class="comentario">// Muestra el historial de cambios de todas las ramas</span></p>
+                <article id="estructura">
+                    <h3>Estructura de carpetas</h3>
+                    <div class="tarjetasD">
+                        <div>
+                            <h4>Configuración Servidor</h4>
+                            <p>
+                                /etc/apache2
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Configuración Virtual Host</h4>
+                            <p>
+                                /etc/apache2/sites-available
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Estructuras de aplicaciones</h4>
+                            <p>
+                                /var/www
+                            </p>
+                        </div>
                     </div>
                 </article>
             </section>
